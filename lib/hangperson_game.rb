@@ -10,6 +10,8 @@ class HangpersonGame
   
   def initialize(word)
     @word = word
+    @guesses = ""
+    @wrong_guesses = ""
   end
 
   def self.get_random_word
@@ -19,4 +21,7 @@ class HangpersonGame
     Net::HTTP.post_form(uri ,{}).body
   end
 
+  attr_accessor :word
+  attr_accessor :guesses
+  attr_accessor :wrong_guesses
 end
