@@ -22,8 +22,6 @@ class HangpersonGame
   end
 
   def guess(letter)
-    letter.downcase!
-
     validate(letter)
 
     letter.downcase!
@@ -42,6 +40,26 @@ class HangpersonGame
 
   def validate(letter)
     raise ArgumentError unless (letter =~ /\w+/) != nil
+  end
+
+  def word_with_guesses
+    @word.chars.map { |c|
+      if @guesses.include?(c)
+        c
+      else
+       "-"
+      end
+    }.join
+  end
+
+  def check_win_or_lose
+    if (@guesses.size + @wrong_guesses.size >= 7)
+      :lose
+    elsif @guesses.size == @word.size
+      :win
+    else
+      :play
+    end
   end
 
   attr_accessor :word
