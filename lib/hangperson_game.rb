@@ -21,6 +21,29 @@ class HangpersonGame
     Net::HTTP.post_form(uri ,{}).body
   end
 
+  def guess(letter)
+    letter.downcase!
+
+    validate(letter)
+
+    letter.downcase!
+    if @guesses.include?(letter) || @wrong_guesses.include?(letter)
+      return false
+    end
+
+    if @word.include?(letter)
+      @guesses += letter
+    else
+      @wrong_guesses += letter
+    end
+    # return true if guess was successful.
+    return true
+  end
+
+  def validate(letter)
+    raise ArgumentError unless (letter =~ /\w+/) != nil
+  end
+
   attr_accessor :word
   attr_accessor :guesses
   attr_accessor :wrong_guesses
