@@ -39,7 +39,8 @@ class HangpersonGame
   end
 
   def validate(letter)
-    raise ArgumentError unless (letter =~ /^[a-zA-Z]+$/) != nil
+    raise ArgumentError if letter == nil
+    raise ArgumentError unless (letter =~ /^[a-zA-Z]+$/)
   end
 
   def word_with_guesses
