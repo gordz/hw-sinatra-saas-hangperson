@@ -1,0 +1,16 @@
+# Assignment 1 - Sinatra
+## Thoughts
+Lots was covered in this assignment! As a developer of 10 years, a lot of the concepts covered were only starting to
+become mainstream when I began my career. The patterns and processes I have picked up throughout the years
+(e.g, using Cucumber for BDD, TDD, red -> green -> refactor cycle) have been solidified by this assignment and the
+lectures.
+
+Coming from a Java background and with some exposure to Ruby, there is a lot to digest here, however many of the
+concepts are the same. Ruby has some nice tooling to support TDD, with ‘auto test’ and ‘rerun’ proving extemely useful,
+something that Java has only recently gotten right in some newer frameworks (e.g Play!, Spring Boot).
+
+
+## Pairing
+I have worked in pairing environments; great for sharing knowledge, patterns, idioms and great for team building,
+however it does impact dev speed. It takes a cultural shift and full commitment from the dev team in order for pairing
+to work properly.
