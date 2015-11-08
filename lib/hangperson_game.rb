@@ -53,13 +53,21 @@ class HangpersonGame
   end
 
   def check_win_or_lose
-    if (@guesses.size + @wrong_guesses.size >= 7)
+    if (@wrong_guesses.size >= 7)
       :lose
-    elsif @guesses.size == @word.size
+    elsif self.solved?
       :win
     else
       :play
     end
+  end
+
+  def solved?
+    solved = true
+    @word.each_char { |c|
+      solved = solved && @guesses.include?(c)
+    }
+    return solved
   end
 
   attr_accessor :word
